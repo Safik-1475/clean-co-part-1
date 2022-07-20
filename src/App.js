@@ -1,11 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './components/Navbar';
+import { Routes, Route } from 'react-router-dom';
+import { publicRoute } from './routes/PublicRoute';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello Tailwindcss</h1>
-    </div>
+    <Navbar>
+      <Routes>
+        {
+          publicRoute.map(route => <Route path={route.path} element={<route.Component />} />)
+        }
+      </Routes>
+    </Navbar>
   );
 }
 
