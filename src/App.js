@@ -7,7 +7,7 @@ function App() {
     <Navbar>
       <Routes>
         {
-          publicRoute.map(route => <Route path={route.path} element={<route.Component />} />)
+          publicRoute.map(({ path, Component }, index) => <Route key={index} path={path} element={<Component />} />)
         }
       </Routes>
     </Navbar>
